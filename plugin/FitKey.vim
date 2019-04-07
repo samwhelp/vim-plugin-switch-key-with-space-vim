@@ -42,8 +42,15 @@ function! s:MapPre () abort
 		let l:localleader['w'] = {'name': '+prefix'}
 	endif
 
+	"" ## <Space><Space>w
+	if !has_key(l:leader[' '], 'w')
+		let l:leader[' ']['w'] = {'name': '+tabs'}
+	endif
 
 
+	" ## add <Bslash> WhichKey Tips. (for \)
+	" https://www.jianshu.com/p/e47f7ec27cea
+	" https://github.com/liuchengxu/vim-which-key
 	nnoremap <silent> <Bslash> :<c-u>WhichKey  '<Bslash>'<CR>
 
 endfunction
@@ -166,7 +173,11 @@ function! s:MapAboutTabPage () abort
 	let l:localleader = g:spacevim#map#localleader#desc
 
 
-	"" ## switch tabpage
+	" ## switch next or previous
+	" default gT for tabprevious
+	" default gt for tabnext
+	" default <C-PageUp> for tabprevious. but gnome-terminal switch tab
+	" default <C-PageDown> for tabnext. but gnome-terminal switch tab
 	"nnoremap <C-Left> :tabprevious<CR>
 	"nnoremap <C-Right> :tabnext<CR>
 	nnoremap <C-h> :tabprevious<CR>
@@ -177,10 +188,28 @@ function! s:MapAboutTabPage () abort
 	let l:localleader['u'] = [':redraw', 'redraw'] "  for orignal <C-l>
 
 
-	" ## <Space><Space>t
-	let l:leader[' ']['t'] = [':tabnew', 'new-tab']
+	" ## open current window to new tabpage
+	let l:leader[' ']['s']= [':tab split', 'open-current-window-to-new-tabpage'] " ## <Space><Space>s
+
+
+	" ## new tabpage or close
+	let l:leader[' ']['t'] = [':tabnew', 'new-tab'] " ## <Space><Space>t
 	nnoremap <Space><Space>e :tabedit<Space>
 	nnoremap <Space><Space>f :tabnew<CR>:edit<Space>
+	"nnoremap <Space><Space>c :tabclose<CR> " space-vim default
+
+
+	" ## quit all
+	"nnoremap <Space><Space>qa :qa!<CR>
+
+
+	" ## close other tabpage
+	" use <Space><Space>wa to close other tabpage, then all buffer will hide, if set hidden.
+	let l:leader[' ']['w']['a']= [':tabonly', 'close-other-tabs'] " ## <Space><Space>wa
+	" Note:
+	" use ,c to delete all buffer, then all tapage will close.
+	" use ,wa to close other window, then all buffer will hide, if set hidden.
+	" use ,h to hide current buffer, then current tapage will close.
 
 endfunction
 
