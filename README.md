@@ -80,6 +80,24 @@ This vim plugin is fit key map for my self with [space-vim](https://github.com/l
 > Compare with `,x`, `,c`, `\x`, `\c`, `,h`。
 
 
+## Buffer List
+
+| Key | Map | Description |
+| --- | --- | --- |
+| `,b` | [:ls](https://vimhelp.org/windows.txt.html#:ls) | Show all buffers. |
+
+> space-vim Use `<Space>bb` can list and chose
+
+
+## Save
+
+| Key | Map | Description |
+| --- | --- | --- |
+| `,s` | [:w](https://vimhelp.org/editing.txt.html#:w) | Write the whole buffer to the current file. |
+
+> space-vim Use `<Space>fs` bind [:update](https://vimhelp.org/editing.txt.html#:update).
+
+
 ## TabPage
 
 | Key | Map | Description |
