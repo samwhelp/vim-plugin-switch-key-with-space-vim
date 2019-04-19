@@ -115,8 +115,7 @@ This vim plugin is fit key map for my self with [space-vim](https://github.com/l
 
 | Key | Map | Description | Notice |
 | --- | --- | --- | --- |
-| `<S-Tab>` | [:w](https://vimhelp.org/editing.txt.html#:w)&lt;CR&gt; | Write the whole buffer to the current file. | Work on Normal Mode and Insert Mo
-de |
+| `<S-Tab>` | [:w](https://vimhelp.org/editing.txt.html#:w)&lt;CR&gt; | Write the whole buffer to the current file. | Work on Normal Mode and Insert Mode |
 
 > space-vim Use `<Space>fs` bind [:update](https://vimhelp.org/editing.txt.html#:update)&lt;CR&gt; .
 
