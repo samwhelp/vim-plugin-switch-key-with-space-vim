@@ -70,17 +70,17 @@ function! s:MapAboutQuit () abort
 
 
 	" ## delete buffer
-	nnoremap <Bslash>q :q<CR>    " single
-	nnoremap <Bslash>x :qa<CR>   " all
-	nnoremap <Bslash>z :q!<CR>   " single
-	nnoremap <Bslash>c :qa!<CR>  " all
+	nnoremap <Bslash>q :q<CR>
+	nnoremap <Bslash>x :qa<CR>
+	nnoremap <Bslash>z :q!<CR>
+	nnoremap <Bslash>c :qa!<CR>
 
 
 	" ## quit
-	nnoremap ,q :bdelete<CR>     " single
-	nnoremap ,x :%bdelete<CR>    " all
-	nnoremap ,z :bdelete!<CR>    " single
-	nnoremap ,c :%bdelete!<CR>   " all
+	nnoremap ,q :bdelete<CR>
+	nnoremap ,x :%bdelete<CR>
+	nnoremap ,z :bdelete!<CR>
+	nnoremap ,c :%bdelete!<CR>
 	"let localleader['q'] = ['bdelete', 'delete-current-buffer']
 	"let localleader['x'] = ['%bdelete', 'delete-all-buffer']
 	"let localleader['z'] = ['bdelete!', 'delete-current-buffer!']
